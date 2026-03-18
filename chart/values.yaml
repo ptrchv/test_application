@@ -1,0 +1,19 @@
+name: challenge-app
+namespace: challenge-app
+deploymentName: challenge-app
+serviceName: challenge-app
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/bl4ckj4c/challenge-app
+  pullPolicy: IfNotPresent
+
+containerPort: 80
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  # Leave unset to let Kubernetes auto-assign a NodePort.
+  # nodePort: 30080
